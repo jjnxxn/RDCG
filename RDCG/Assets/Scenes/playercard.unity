@@ -351,7 +351,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1283261262}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb00b8a58da7db64f9c8ce0dd8e2c2e4, type: 3}
+  m_Script: {fileID: 11500000, guid: ef7715e62be7e524493ece9e2782b9d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cardPosition1: {fileID: 1857209075}
@@ -359,29 +359,7 @@ MonoBehaviour:
   cardPosition3: {fileID: 1795166263}
   cardPosition4: {fileID: 690444278}
   cardPosition5: {fileID: 698882155}
-  cards:
-  - {fileID: 5799090191421614976, guid: 4a2c8388b6296204ba89b928cf06fa33, type: 3}
-  - {fileID: 5799090191421614976, guid: ded032254c9de444ca01d5fb8ae4b85d, type: 3}
-  - {fileID: 5799090191421614976, guid: d7ed2a04e5fe6824eb978d8eebf53c03, type: 3}
-  - {fileID: 5799090191421614976, guid: d5d056406a5c3da46b213a99efb00a36, type: 3}
-  - {fileID: 5799090191421614976, guid: a1e4324963c486441aa88c33003bc534, type: 3}
-  - {fileID: 5799090191421614976, guid: 41b735f9732bc8c47bd7eb4dcc2d7956, type: 3}
-  - {fileID: 5799090191421614976, guid: 793a5c5839c82cf4fbc8593f7143dcfd, type: 3}
-  - {fileID: 5799090191421614976, guid: ca99b97b3762fc541b7c652dee3e5018, type: 3}
-  - {fileID: 5799090191421614976, guid: f9f5d05b684676447abe773a4941808b, type: 3}
-  - {fileID: 5799090191421614976, guid: 0f771bc941abc184ea25bca713dd7282, type: 3}
-  - {fileID: 5799090191421614976, guid: 5707aa861a956f442a8863c2ea66f162, type: 3}
-  - {fileID: 5799090191421614976, guid: 5ab12e5f3cce4ed419a336a39fb693cb, type: 3}
-  - {fileID: 5799090191421614976, guid: 299373d158d679b49b325e55b88b3388, type: 3}
-  - {fileID: 5799090191421614976, guid: ec534f7973834804992b120e2a811ef7, type: 3}
-  - {fileID: 5799090191421614976, guid: 8d02d014ea0b68b44bb8928c1a56ab97, type: 3}
-  - {fileID: 5799090191421614976, guid: 483bf4ff34ac1c841a19b901181933df, type: 3}
-  - {fileID: 5799090191421614976, guid: 61ec428dfa1c6ab4791cec171f552e2e, type: 3}
-  - {fileID: 5799090191421614976, guid: 5c7e7bb9a68f1a148b561c088d49e546, type: 3}
-  - {fileID: 5799090191421614976, guid: 60fba5f241b6e014e88b430df4bc062d, type: 3}
-  - {fileID: 5799090191421614976, guid: fc8ecd78ae660ea4f8aaf21857fd430c, type: 3}
-  - {fileID: 5799090191421614976, guid: c2abf3dce3f47d64db6f46c5218b0afb, type: 3}
-  - {fileID: 5799090191421614976, guid: 5e1d56786cf0795448cc83f0a0ddd3e7, type: 3}
+  cards: []
 --- !u!136 &1283261264
 CapsuleCollider:
   m_ObjectHideFlags: 0
