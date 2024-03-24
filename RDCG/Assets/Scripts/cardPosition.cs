@@ -43,28 +43,29 @@ public class cardPosition : MonoBehaviour
     void Update()
     {
         // 키보드 입력을 감지하여 해당 위치를 매겨변수로 사용
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1)) //키보드숫자1번 누를시
         {
-            UseCardAtPosition(cardPosition1.transform.position);
+            UseCardAtPosition(cardPosition1.transform.position); //1번카드포지션위치를 매개변수로 넣어 함수실행
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        else if (Input.GetKeyDown(KeyCode.Alpha2)) //키보드2번 누를시
         {
-            UseCardAtPosition(cardPosition2.transform.position);
+            UseCardAtPosition(cardPosition2.transform.position); //2번카드포지션위치를 매개변수로 넣어 함수실행
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        else if (Input.GetKeyDown(KeyCode.Alpha3)) //키보드3번 누를시
         {
-            UseCardAtPosition(cardPosition3.transform.position);
+            UseCardAtPosition(cardPosition3.transform.position); //3번카드포지션위치를 매개변수로 넣어 함수실행
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        else if (Input.GetKeyDown(KeyCode.Alpha4)) //키보드4번 누를시
         {
-            UseCardAtPosition(cardPosition4.transform.position);
+            UseCardAtPosition(cardPosition4.transform.position); //4번카드포지션위치를 매개변수로 넣어 함수실행
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha5))
+        else if (Input.GetKeyDown(KeyCode.Alpha5)) //키보드5번 누를시
         {
-            UseCardAtPosition(cardPosition5.transform.position);
+            UseCardAtPosition(cardPosition5.transform.position); //5번카드포지션위치를 매개변수로 넣어 함수실행
         }
     }
 
+    // 사용한카드의 위치를 매개변수로 받아 그 위치에 카드를 제거하고 새로운 카드를 생성
     void UseCardAtPosition(Vector3 position)
     {
         // 일정 거리 내에 있는지 확인하기 위한 임계값, 내 맘대로설정 값 바꾸어도 상관없음
@@ -89,7 +90,7 @@ public class cardPosition : MonoBehaviour
             }
         }
     }
-
+    // 카드위치를 매개변수로 받아 리스트에서 랜덤 카드를 생성하는 함수
     IEnumerator SpawnNewCard(Vector3 position)
     {
         // 일정 시간 동안 대기 시간바꾸어도 상관없음
