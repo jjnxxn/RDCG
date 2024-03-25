@@ -16,8 +16,8 @@ public class MainTitle : MonoBehaviour
     {
         
     }
-    //메인화면에서 게임시작 버튼 클릭 시 캐릭터 선택창으로 이동
+    //MainTitle에서 게임시작 버튼 클릭 시 CharacterSelection1으로 이동
     public void click(){
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("CharacterSelection1");
     }
 }

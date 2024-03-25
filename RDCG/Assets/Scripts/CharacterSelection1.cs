@@ -16,8 +16,8 @@ public class CharacterSelection1 : MonoBehaviour
     {
         
     }
-    // 캐릭터 선택창에서 캐릭터 버튼 클릭시 캐릭터선택2 이동
+    // CharacterSelection1화면에서 캐릭터 버튼 클릭시 CharacterSelection2로 이동
     public void click(){
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("CharacterSelection2");
     }
 }
