@@ -20,4 +20,8 @@ public class CharacterSelection1 : MonoBehaviour
     public void click(){
         SceneManager.LoadScene("CharacterSelection2");
     }
+    // CharacterSelection1화면에서 뒤로가기 버튼 클릭시 MainTitle로 이동
+     public void click2(){
+        SceneManager.LoadScene("MainTitle");
+    }
 }
