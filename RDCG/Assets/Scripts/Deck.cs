@@ -14,15 +14,15 @@ public class Deck : MonoBehaviour
     /// </summary>
     public void CardAdd()
     {
-        cardDeck.Add(new Card("공격카드 1", 1, 1, "적에게 데미지 1를 줍니다."));
-        cardDeck.Add(new Card("공격카드 1", 1, 1, "적에게 데미지 1를 줍니다."));
-        cardDeck.Add(new Card("공격카드 1", 1, 1, "적에게 데미지 1를 줍니다."));
-        cardDeck.Add(new Card("공격카드 1", 1, 1, "적에게 데미지 1를 줍니다."));
-        cardDeck.Add(new Card("공격카드 1", 1, 1, "적에게 데미지 1를 줍니다."));
-        cardDeck.Add(new Card("공격카드 2", 2, 2, "적에게 데미지 2를 줍니다."));
-        cardDeck.Add(new Card("공격카드 2", 2, 2, "적에게 데미지 2를 줍니다."));
-        cardDeck.Add(new Card("공격카드 2", 2, 2, "적에게 데미지 2를 줍니다."));
-        cardDeck.Add(new Card("공격카드 3", 3, 3, "적에게 데미지 3를 줍니다."));
-        cardDeck.Add(new Card("공격카드 3", 3, 3, "적에게 데미지 3를 줍니다."));
+        cardDeck.Add(new Card("카드1", 1, 1, "적에게 데미지 1를 줍니다."));
+        cardDeck.Add(new Card("카드 2", 1, 1, "적에게 데미지 1를 줍니다."));
+        cardDeck.Add(new Card("카드 3", 1, 1, "적에게 데미지 1를 줍니다."));
+        cardDeck.Add(new Card("카드 4", 1, 1, "적에게 데미지 1를 줍니다."));
+        cardDeck.Add(new Card("카드 5", 1, 1, "적에게 데미지 1를 줍니다."));
+        cardDeck.Add(new Card("카드 6", 2, 2, "적에게 데미지 2를 줍니다."));
+        cardDeck.Add(new Card("카드 7", 2, 2, "적에게 데미지 2를 줍니다."));
+        cardDeck.Add(new Card("카드 8", 2, 2, "적에게 데미지 2를 줍니다."));
+        cardDeck.Add(new Card("카드 9", 3, 3, "적에게 데미지 3를 줍니다."));
+        cardDeck.Add(new Card("카드 10", 3, 3, "적에게 데미지 3를 줍니다."));
     }
 }
