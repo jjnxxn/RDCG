@@ -3,7 +3,13 @@ guid: 3570d0d4ca50f4a499a00542404bbc79
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - deck: {instanceID: 0}
+  - cardPosition1: {instanceID: 0}
+  - cardPosition2: {instanceID: 0}
+  - cardPosition3: {instanceID: 0}
+  - cardPosition4: {instanceID: 0}
+  - cardPosition5: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
