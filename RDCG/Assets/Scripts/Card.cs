@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using UnityEngine;
 
-public class Card
+public class Card 
+
 {
     //Get Set 프로퍼티 (개방폐쇄형)
     public string cardName { get; private set; } //카드의 이름을 저장하는 변수
