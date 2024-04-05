@@ -2,27 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// 추가적으로 얻을수있는 카드 관리하는 스크립트
 public class Deck : MonoBehaviour
 {
-    // 카드를 담는 리스트를 선언
-    public List<Card> cardDeck = new List<Card>();
+    // 덱에 추가할수있는 카드를 담는 리스트를 선언
+    public List<GameObject> cardList = new List<GameObject>();
 
-    /// <summary>
-    /// 카드를 추가하는 함수 나중에 CSV로 데이터를 불러 받아서 기능 구현이 되면 수정 할 예정
-    /// 총 덱은 10장이 있는데 5장은 1데미지 1코스트, 3장은 2데미지 2코스트, 2장은 3데미지 3코스트
-    /// 나중에 new Card 할 때 Attack 인지 Defense 일지 CardType를 정해주는 것을 Enum 클래스로 타입을 정함
-    /// </summary>
-    public void CardAdd()
+    private void Update()
     {
-        cardDeck.Add(new Card("카드1", 1, 1, "적에게 데미지 1를 줍니다."));
-        cardDeck.Add(new Card("카드 2", 1, 1, "적에게 데미지 1를 줍니다."));
-        cardDeck.Add(new Card("카드 3", 1, 1, "적에게 데미지 1를 줍니다."));
-        cardDeck.Add(new Card("카드 4", 1, 1, "적에게 데미지 1를 줍니다."));
-        cardDeck.Add(new Card("카드 5", 1, 1, "적에게 데미지 1를 줍니다."));
-        cardDeck.Add(new Card("카드 6", 2, 2, "적에게 데미지 2를 줍니다."));
-        cardDeck.Add(new Card("카드 7", 2, 2, "적에게 데미지 2를 줍니다."));
-        cardDeck.Add(new Card("카드 8", 2, 2, "적에게 데미지 2를 줍니다."));
-        cardDeck.Add(new Card("카드 9", 3, 3, "적에게 데미지 3를 줍니다."));
-        cardDeck.Add(new Card("카드 10", 3, 3, "적에게 데미지 3를 줍니다."));
+        // 테스트 위해서 키보드6번 누를시 카드가 생성되도록 만듬
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            // 현재 씬에서 사용되는 카드 덱을 관리하는 CurrentDeck 스크립트를 찾아 변수에 할당
+            CurrentDeck currentDeck = FindObjectOfType<CurrentDeck>();
+
+            // 현재 카드 덱 리스트를 함수의 매개변수로 전달하여 카드 추가
+            AddRandomCardToDeck(currentDeck.cardDeck);
+        }
+    }
+
+    // 현재 스테이지에서 사용할 카드를 담아놓은 덱에 랜덤 카드 추가하는 함수
+    public void AddRandomCardToDeck(List<GameObject> deck)
+    {
+        // 리스트 내에 랜덤 인덱스 선택
+        int randomIndex = Random.Range(0, cardList.Count);
+
+        // 선택된 카드를 현재 덱에 추가
+        deck.Add(cardList[randomIndex]);
     }
 }
