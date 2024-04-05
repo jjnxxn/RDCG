@@ -27,6 +27,16 @@ public class cardPosition : MonoBehaviour
 
     void Start()
     {
+<<<<<<< HEAD
+        /*
+        // Deck 클래스의 인스턴스 생성
+        deck = new Deck();
+        // Deck 클래스의 CardAdd 함수 호출하여 카드덱 생성
+        deck.CardAdd();
+        */
+
+=======
+>>>>>>> 73ebf95e75e726f65185c63c40c1c446b08f205c
         // 카드 위치를 배열로 선언
         GameObject[] cardPositions = new GameObject[] { cardPosition1, cardPosition2, cardPosition3, cardPosition4, cardPosition5 };
 
