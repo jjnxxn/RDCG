@@ -201,5 +201,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: card2
   cardCost: 1
-  cardValue: 2
+  cardValue: 5
   cardContent: "\uC801\uC5D0\uAC8C 2\uB370\uBBF8\uC9C0\uB97C \uC785\uD799\uB2C8\uB2E4"
+  cardEffect: 4

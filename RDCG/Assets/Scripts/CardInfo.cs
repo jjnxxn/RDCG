@@ -14,6 +14,8 @@ public class CardInfo : MonoBehaviour
     public int cardValue;
     // 카드의 내용
     public string cardContent;
+    // 카드의 특수효과
+    public int cardEffect;
 
     // Start is called before the first frame update
     void Start()
