@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,6 +10,9 @@ public class Player : MonoBehaviour
     public int playerCost = 1; // 플레이어의 현재 사용 할 수 있는 코스트
     public int playerMaxCost = 10; //  플레이어의 최대 코스트
     public int playerTurnCount = 1; // 플레이어의 턴 수를 카운트 하는 변수
+    private int rannum = 0;   // 카드의 운적인 요소를 정하기 위해 사용하는 변수
+    private int mulnum = 0;  // 카드효과 배로 데미지들어가는것을 위해 사용하는 변수
+    private int cardDamage = 0; // 카드 value값 받아오기위해 사용하는 변수
 
     public Enemy enemy; // 적 스크립트 호출
 
@@ -67,7 +70,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         playerHpText.text = "HP : " + playerHp.ToString(); // HP 텍스트를 실시간으로 변경
-        playerCostText.text = "Cost : " + playerCost.ToString() + " / " + playerMaxCost.ToString(); // Cost 텍스트를 실시간으로 변경
+        playerCostText.text = "Cost : " + playerCost.ToString() + " / " + playerTurnCount.ToString(); // Cost 텍스트를 실시간으로 변경
         playerHpBar.value = playerHp / playerMaxHp; // HP 슬라이더 바 현재 체력 비례하여 최대 체력으로 나눠 업데이트
 
         // 키보드 입력을 감지하여 해당 위치를 매겨변수로 사용
@@ -120,10 +123,8 @@ public class Player : MonoBehaviour
                     // 카드 코스트만큼 차감
                     playerCost -= cardInfo.cardCost;
 
-                    // 적 스크립트의 적 체력을 불러와서
-                    // 데미지 정보 잘 들어갔는지 확인차 로그
-                    enemy.enemyHp -= cardInfo.cardValue;
-                    Debug.Log("적의 현재 체력은 " + enemy.enemyHp);
+                    // 카드효과 불러와 적용하는 함수 호출
+                    CardEffect(cardInfo);  
 
                     // useNumbers 리스트에 몇 번째 cardPosition이 사용이 되었는지 리스트에 추가
                     useNumbers.Add(i);
@@ -229,4 +230,138 @@ public class Player : MonoBehaviour
             isPlayerDead = false;
         }
     }
+
+    // 카드의 효과를 확인하고 적응해주는 함수
+    public void CardEffect(CardInfo cardInfo)
+    {
+        // 효과없이 공격만있는 카드일경우
+        if (cardInfo.cardEffect == 0)
+        {
+            // cardDamage에 cardValue값 받아옴
+            cardDamage = cardInfo.cardValue;
+            // mulnum이 0이아닐시 cardDamage는 mulnum값만큼 배로 들어감
+            if (mulnum != 0)
+            {
+                cardDamage *= mulnum;
+                mulnum = 0;
+            }
+            // 적 스크립트의 적 체력을 불러와서
+            // 데미지 정보 잘 들어갔는지 확인차 로그
+            enemy.enemyHp -= cardDamage;
+            Debug.Log("적의 현재 체력은 " + enemy.enemyHp);
+        }
+        // 1일경우 절반의 확률로 적이 카드값의 두배로 데미지를 입거나 카드값만큼 회복함
+        else if (cardInfo.cardEffect == 1)
+        {
+            // cardDamage에 cardValue값 받아옴
+            cardDamage = cardInfo.cardValue;
+            // mulnum이 0이아닐시 cardDamage는 mulnum값만큼 배로 들어감
+            if (mulnum != 0)
+            {
+                cardDamage *= mulnum;
+                mulnum = 0;
+            }
+            //rannum에 0이나 1을 넣어 0일시 데미지입고 1일시 회복하도록 설정
+            rannum = Random.Range(0, 2);
+            if (rannum == 0)
+            {
+                cardDamage *= 2;
+                enemy.enemyHp -= cardDamage;
+            }
+            else if (rannum == 1)
+            {
+                enemy.enemyHp += cardDamage;
+                //만약 적체력을 회복하면 최대체력보다 높아질시 체력을 최대체력으로 지정
+                if (enemy.enemyHp > enemy.enemyMaxHp)
+                {
+                    enemy.enemyHp = enemy.enemyMaxHp;
+                }
+            }
+        }
+        // 2일경우 절반의 확률로 플레이어가 카드값의 데미지를 입거나 카드값의 두배만큼만큼 회복함
+        else if (cardInfo.cardEffect == 2)
+        {
+            // cardDamage에 cardValue값 받아옴
+            cardDamage = cardInfo.cardValue;
+            // mulnum이 0이아닐시 cardDamage는 mulnum값만큼 배로 들어감
+            if (mulnum != 0)
+            {
+                cardDamage *= mulnum;
+                mulnum = 0;
+            }
+            //rannum에 0이나 1을 넣어 0일시 데미지입고 1일시 회복하도록 설정
+            rannum = Random.Range(0, 2);
+            if (rannum == 0)
+            {
+                playerHp -= cardDamage;
+            }
+            else if (rannum == 1)
+            {
+                cardDamage *= 2;
+                playerHp += cardDamage;
+                //만약 플레이어체력을 회복하면 최대체력보다 높아질시 체력을 최대체력으로 지정
+                if (playerHp > playerMaxHp)
+                {
+                    playerHp = playerMaxHp;
+                }
+            }
+        }
+        // 3일경우 카드값만큼 절반의 확률로 이번턴에 사용할코스트를 올려주거나 플레이어 최대코스트를 올려줍니다.
+        else if(cardInfo.cardEffect == 3)
+        {
+            // cardDamage에 cardValue값 받아옴
+            cardDamage = cardInfo.cardValue;
+            // mulnum이 0이아닐시 cardDamage는 mulnum값만큼 배로 들어감
+            if (mulnum != 0)
+            {
+                cardDamage *= mulnum;
+                mulnum = 0;
+            }
+            //rannum에 0이나 1을 넣어 0일시 현재코스트 1일시 최대코스트 올려주도록 설정
+            rannum = Random.Range(0, 2);
+            if (rannum == 0)
+            {
+                playerCost += cardDamage;
+                if (playerCost > playerTurnCount) // 플레이어의 턴 수가 플레이어의 턴수보다 클경우
+                {
+                    // 플레이어 코스트를 턴수로 지정
+                    playerCost = playerTurnCount;
+                }
+            }
+            else if (rannum == 1)
+            {
+                // 현재 플레이어의 턴 수를 증가 
+                playerTurnCount+= cardDamage;
+                if (playerTurnCount > playerMaxCost) // 플레이어의 턴 수가 플레이어의 최대코스트보다 클경우
+                {
+                    // 플레이어 턴수를 최대 코스트로 지정
+                    playerTurnCount = playerMaxCost;
+                }
+            }
+        }
+        // 4일경우 다음 카드 사용시 효과 카드값만큼 배로 들어감
+        else if( cardInfo.cardEffect == 4)
+        {
+            mulnum = cardInfo.cardValue;
+        }
+        // 5일경우 만약 카드 사용시 남은코스트가 0이라면 데미지 두배로 들어감
+        else if((cardInfo.cardEffect == 5))
+        {
+            // cardDamage에 cardValue값 받아옴
+            cardDamage = cardInfo.cardValue;
+            // mulnum이 0이아닐시 cardDamage는 mulnum값만큼 배로 들어감
+            if (mulnum != 0)
+            {
+                cardDamage *= mulnum;
+                mulnum = 0;
+            }
+            // 남은 코스트가 0일시 두배의 데미지 들어감
+            if(playerCost == 0)
+            {
+                cardDamage *= 2;
+            }
+            enemy.enemyHp -= cardDamage;
+        }
+    }
+
 }
