@@ -17,7 +17,11 @@ public class Selection : MonoBehaviour
     {
         
     }
-
+    // CharacterSelection2에서 스테이지 이동 클릭 시 Stage으로 이동 
+    public void StageClickBtn()
+    {
+        SceneManager.LoadScene("Stage");
+    }
     //MainTitle에서 게임시작 버튼 클릭 시 CharacterSelection1으로 이동
     public void MainTitleClickStartBtn(){
         SceneManager.LoadScene("CharacterSelection1");

@@ -24,7 +24,15 @@ public class TurnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (enemy.enemyHp <= 0) // 적의 체력이 0보다 작을 경우
+        {
+            enemy.EnemyDeath(); // 적이 죽었다는 함수 실행
+        }
 
+        if (Player.playerHp <= 0) // 플레이어의 체력이 0보다 작을 경우
+        {
+            player.PlayerDead(); // 플레이어가 죽었다는 함수 실행
+        }
     }
     /// <summary>
     /// 플레이어 행동을 다 끝내고

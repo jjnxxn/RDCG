@@ -1,12 +1,16 @@
-    using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    public float playerHp = 100; // 플레이어의 현재 체력
+    public static float playerHp; // 플레이어의 현재 체력 (static으로 전역 변수 접근)
     public float playerMaxHp = 100; // 플레이어의 최대 체력
+    public static int playerCurrentGold; // 플레이어가 현재 가지고 있는 돈 (static으로 전역 변수 접근)
+    public static int playerGainGold; // 플레이어가 스테이지 끝나고 얻은 돈 (static으로 전역 변수 접근) 
+
     public int playerCost = 1; // 플레이어의 현재 사용 할 수 있는 코스트
     public int playerMaxCost = 10; //  플레이어의 최대 코스트
     public int playerTurnCount = 1; // 플레이어의 턴 수를 카운트 하는 변수
@@ -21,6 +25,7 @@ public class Player : MonoBehaviour
     public Slider playerHpBar; // 현재 플레이어의 체력 바 UI 
 
     public bool isPlayerDead = false; // 플레이어가 죽었는지 살아있는지 상태
+    public static bool isPlayerStage1 = false; // 플레이어가 스테이지1을 깼는지 못꺴는지 알 수 있는 상태 (Static으로 나중에 버튼 활성화)
 
     // 카드의 고정 위치를 받아오기 위한 변수 지정
     public GameObject cardPosition1;
@@ -44,6 +49,10 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerHp = 100; // 플레이어 HP 100으로 초기화
+        playerCurrentGold = 0; // 플레이어의 돈 0으로 초기화
+        playerGainGold = 0; // 플레이어가 얻는 돈 0으로 초기화
+
         // useNumbers 리스트를 <int> 초기화
         useNumbers = new List<int>();
 
@@ -221,13 +230,19 @@ public class Player : MonoBehaviour
     /// </summary>
     public void PlayerDead()
     {
-        if (playerHp <= 0)
+        isPlayerDead = true; // 플레이어가 죽은 상태
+        SceneManager.LoadScene("Death"); // "Death" 씬으로 이동
+    }
+
+    /// <summary>
+    /// 현재 플레이어가 Stage1을 깬건지 알 수 있는 상태
+    /// Stage는 1, 2, Boss로 나뉘어져 있으며 총 3번의 전투를 할 예정
+    /// </summary>
+    public void PlayerClearStage1()
+    {
+        if (Enemy.isEnemyDead == true) // 에너미가 죽었을 때
         {
-            isPlayerDead = true;
-        }
-        else
-        {
-            isPlayerDead = false;
+            isPlayerStage1 = true; // 플레이어는 Stage1을 클리어 된 상태
         }
     }
 
