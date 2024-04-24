@@ -13,15 +13,9 @@ public class CurrentDeck : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    // Start is called before the first frame update
-    void Start()
+    // 카드를 덱에 추가하는 메서드
+    public void Add(GameObject card)
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        cardDeck.Add(card);
     }
 }

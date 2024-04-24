@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    public static float playerHp; // 플레이어의 현재 체력 (static으로 전역 변수 접근)
-    public float playerMaxHp = 100; // 플레이어의 최대 체력
+    public static int playerHp; // 플레이어의 현재 체력 (static으로 전역 변수 접근)
+    public int playerMaxHp = 100; // 플레이어의 최대 체력
     public static int playerCurrentGold; // 플레이어가 현재 가지고 있는 돈 (static으로 전역 변수 접근)
     public static int playerGainGold; // 플레이어가 스테이지 끝나고 얻은 돈 (static으로 전역 변수 접근) 
 
@@ -377,6 +377,32 @@ public class Player : MonoBehaviour
             }
             enemy.enemyHp -= cardDamage;
         }
+    }
+
+    // 다른 스크립트에서 쉽게 현재 플레이어 돈 얻어오기 위해 만든 함수
+    public static int GetPlayerMoney()
+    {
+        return playerCurrentGold;
+    }
+
+    // 다른 스크립트에서 쉽게 현재 플레이어 돈 설정하기 위해 만든 함수
+    public static void SetPlayerMoney(int money)
+    {
+        playerCurrentGold = money;
+        Debug.Log("돈 :  " + money);
+    }
+
+    // 다른 스크립트에서 현재 플레이어 체력 얻어오기 위해 만든 함수
+    public static int GetPlayerHp()
+    {
+        return playerHp;
+    }
+
+    // 다른 스크립트에서 현재 플레이어 체력 설정하기 위해 만든 함수
+    public static void SetPlayerHp(int hp)
+    {
+        playerHp = hp;
+        Debug.Log("체력 :  " + hp);
     }
 
 }
