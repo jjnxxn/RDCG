@@ -20,14 +20,14 @@ public class StoreManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // 현재 플레이어가 소유하고 있는 돈 받아오기
-        // playerMoney = Player.GetPlayerMoney(); 
-        // 현재 플레이어가 가지고 있는 HP 받아오기
-        // playerHp = Player.GetPlayerHp(); 
+         //현재 플레이어가 소유하고 있는 돈 받아오기
+         playerMoney = Player.GetPlayerMoney(); 
+         //현재 플레이어가 가지고 있는 HP 받아오기
+         playerHp = Player.GetPlayerHp(); 
         
         //테스트를 위해서 임시값 넣었음
-        playerMoney = 1200;
-        playerHp = 20;
+        //playerMoney = 1200;
+        //playerHp = 20;
     }
 
     // Update is called once per frame
@@ -41,7 +41,7 @@ public class StoreManager : MonoBehaviour
     /// </summary>
     public void BackButton()
     {
-        SceneManager.LoadScene("MainTitle");
+        SceneManager.LoadScene("Stage");
     }
 
     /// <summary>
@@ -79,6 +79,10 @@ public class StoreManager : MonoBehaviour
 
             // 현재덱에 랜덤 카드 추가
             deck.AddRandomCardToDeck();
+        }
+        else
+        {
+            Debug.Log("돈이 부족합니다.");
         }
     }
 
