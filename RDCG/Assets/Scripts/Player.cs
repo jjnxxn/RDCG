@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    public static float playerHp; // 플레이어의 현재 체력 (static으로 전역 변수 접근)
-    public float playerMaxHp = 100; // 플레이어의 최대 체력
-    public static int playerCurrentGold; // 플레이어가 현재 가지고 있는 돈 (static으로 전역 변수 접근)
-    public static int playerGainGold; // 플레이어가 스테이지 끝나고 얻은 돈 (static으로 전역 변수 접근) 
+    public static int playerHp = 100; // 플레이어의 현재 체력 (static으로 전역 변수 접근)
+    public int playerMaxHp = 100; // 플레이어의 최대 체력
+    public static int playerCurrentGold = 0; // 플레이어가 현재 가지고 있는 돈 (static으로 전역 변수 접근)
+    public static int playerGainGold = 0; // 플레이어가 스테이지 끝나고 얻은 돈 (static으로 전역 변수 접근) 
 
     public int playerCost = 1; // 플레이어의 현재 사용 할 수 있는 코스트
     public int playerMaxCost = 10; //  플레이어의 최대 코스트
@@ -49,9 +49,11 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerHp = 100; // 플레이어 HP 100으로 초기화
-        playerCurrentGold = 0; // 플레이어의 돈 0으로 초기화
-        playerGainGold = 0; // 플레이어가 얻는 돈 0으로 초기화
+        // currentdeck 클래스의 인스턴스를 찾습니다.
+        CurrentDeck cardDeck = FindObjectOfType<CurrentDeck>();
+
+        //  CurrentDeck클래스의 cardDeck 리스트에 있는 카드를 Player의 cards 리스트로 복사합니다.
+        cards.AddRange(cardDeck.cardDeck);
 
         // useNumbers 리스트를 <int> 초기화
         useNumbers = new List<int>();
@@ -377,6 +379,32 @@ public class Player : MonoBehaviour
             }
             enemy.enemyHp -= cardDamage;
         }
+    }
+
+    // 다른 스크립트에서 쉽게 현재 플레이어 돈 얻어오기 위해 만든 함수
+    public static int GetPlayerMoney()
+    {
+        return playerCurrentGold;
+    }
+
+    // 다른 스크립트에서 쉽게 현재 플레이어 돈 설정하기 위해 만든 함수
+    public static void SetPlayerMoney(int money)
+    {
+        playerCurrentGold = money;
+        Debug.Log("돈 :  " + money);
+    }
+
+    // 다른 스크립트에서 현재 플레이어 체력 얻어오기 위해 만든 함수
+    public static int GetPlayerHp()
+    {
+        return playerHp;
+    }
+
+    // 다른 스크립트에서 현재 플레이어 체력 설정하기 위해 만든 함수
+    public static void SetPlayerHp(int hp)
+    {
+        playerHp = hp;
+        Debug.Log("체력 :  " + hp);
     }
 
 }

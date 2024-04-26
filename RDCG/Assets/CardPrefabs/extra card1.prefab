@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 839391828771257629}
   - component: {fileID: 7787531749025675418}
   m_Layer: 0
-  m_Name: card1
+  m_Name: extra card1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -177,7 +177,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -435394785, guid: b3fa6dc88699af84087d49cfb206f2c2, type: 3}
-  m_Color: {r: 1, g: 0.0056602955, b: 0.0056602955, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -199,8 +199,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55c6286469f58dd4e8d7b65c169d79b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardName: card1
+  cardName: card10
   cardCost: 1
-  cardValue: 10
-  cardContent: "\uC801\uC5D0\uAC8C 1\uB370\uBBF8\uC9C0 \uB97C \uC785\uD799\uB2C8\uB2E4"
-  cardEffect: 5
+  cardValue: 4
+  cardContent: "\uC801\uC5D0\uAC8C 6\uC758 \uB370\uBBF8\uC9C0\uB97C \uC785\uD799\uB2C8\uB2E4"
+  cardEffect: 4

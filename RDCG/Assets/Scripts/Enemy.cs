@@ -92,8 +92,8 @@ public class Enemy : MonoBehaviour
     {
         isEnemyDead = true; // 적이 죽은 상태를 true
         player.PlayerClearStage1(); // player가 Stage1을 클리어 했다는 함수 실행
-        Player.playerGainGold += Random.Range(100, 601); // 플레이어의 획득 골드를 100 ~ 600까지 랜덤으로 획득
-        Player.playerCurrentGold += Player.playerCurrentGold; // 플레이어의 현재 골드를 플레이어의 획득 골드만큼 더함
+       Player.playerGainGold += Random.Range(100, 601); // 플레이어의 획득 골드를 100 ~ 600까지 랜덤으로 획득
+        Player.playerCurrentGold += Player.playerGainGold; // 플레이어의 현재 골드를 플레이어의 획득 골드만큼 더함
         SceneManager.LoadScene("Stage Clear1"); // Stage Clear1 씬으로 이동
     }
 }

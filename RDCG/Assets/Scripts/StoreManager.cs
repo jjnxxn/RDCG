@@ -13,12 +13,21 @@ public class StoreManager : MonoBehaviour
     public Text playerHpText; // 플레이어가 현재 가지고 있는 체력을 나타내는 Text
     private int hpRecoveryCost = 200; // 체력을 회복하는데 필요한 비용
     private int hpRecoveryAmount = 20; // 체력을 회복하는 양
+    private int cardRecoverCost = 200; // 카드 사는데 필요한 비용
+
+    public Deck deck; // Deck 스크립트에 대한 참조 추가
 
     // Start is called before the first frame update
     void Start()
     {
-        playerMoney = 1100; // 현재 플레이어가 소유하고 있는 돈
-        playerHp = 30; // 현재 플레이어가 가지고 있는 HP
+         //현재 플레이어가 소유하고 있는 돈 받아오기
+         playerMoney = Player.GetPlayerMoney(); 
+         //현재 플레이어가 가지고 있는 HP 받아오기
+         playerHp = Player.GetPlayerHp(); 
+        
+        //테스트를 위해서 임시값 넣었음
+        //playerMoney = 1200;
+        //playerHp = 20;
     }
 
     // Update is called once per frame
@@ -32,12 +41,11 @@ public class StoreManager : MonoBehaviour
     /// </summary>
     public void BackButton()
     {
-        SceneManager.LoadScene("MainTitle");
+        SceneManager.LoadScene("Stage");
     }
 
     /// <summary>
     /// 플레이어의 체력을 회복하고 돈을 소모하는 함수
-    /// 나중에 Player 데이터를 받아서 클래스로 수정할 예정
     /// </summary>
     public void PlayerHPBuyButton()
     {
@@ -49,8 +57,8 @@ public class StoreManager : MonoBehaviour
         {
             playerMoney -= hpRecoveryCost;
             playerHp = Mathf.Min(playerHp + hpRecoveryAmount, maxPlayerHp);
-            Debug.Log("플레이어의 돈: " + playerMoney);
-            Debug.Log("플레이어의 체력: " + playerHp);
+            Player.SetPlayerMoney(playerMoney); // 플레이어스크립트의 돈을 최신화
+            Player.SetPlayerHp(playerHp);  // 플레이어의 스크립트의 체력을 최신화
         }
         else
         {
@@ -60,26 +68,21 @@ public class StoreManager : MonoBehaviour
 
     /// <summary>
     /// 카드를 구매하는 함수
-    /// 나중에 Card 리스트를 받아서 배열로 몇 번째를 할당하고 랜덤적으로 가중치 부여해서 구매 할 예정
     /// </summary>
     public void BuyCardButton()
     {
-        int cardRandomType = Random.Range(1, 4);
-
-        switch (cardRandomType)
+        // 가진돈이 전체 카드 구매 비용보단 많을경우 
+        if(playerMoney >= cardRecoverCost)
         {
-            case 1:
-                Debug.Log("너는 카드 1을 샀어");
-                break;
-            case 2:
-                Debug.Log("너는 카드 2을 샀어");
-                break;
-            case 3:
-                Debug.Log("너는 카드 3을 샀어");
-                break;
-            default:
-                Debug.Log("카드 타입이 존재하지 않습니다.");
-                break;
+            playerMoney -= cardRecoverCost; //돈을 카드비용만큼 줄임
+            Player.SetPlayerMoney(playerMoney); // 플레이어스크립트의 돈을 최신화
+
+            // 현재덱에 랜덤 카드 추가
+            deck.AddRandomCardToDeck();
+        }
+        else
+        {
+            Debug.Log("돈이 부족합니다.");
         }
     }
 
