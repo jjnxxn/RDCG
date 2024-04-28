@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    public static int playerHp = 100; // 플레이어의 현재 체력 (static으로 전역 변수 접근)
+    public static float playerHp = 100; // 플레이어의 현재 체력 (static으로 전역 변수 접근)
     public int playerMaxHp = 100; // 플레이어의 최대 체력
     public static int playerCurrentGold = 0; // 플레이어가 현재 가지고 있는 돈 (static으로 전역 변수 접근)
     public static int playerGainGold = 0; // 플레이어가 스테이지 끝나고 얻은 돈 (static으로 전역 변수 접근) 
@@ -233,6 +233,9 @@ public class Player : MonoBehaviour
     public void PlayerDead()
     {
         isPlayerDead = true; // 플레이어가 죽은 상태
+        playerHp = playerMaxHp; // 플레이어의 체력을 플레이어의 최대 체력으로 초기화
+        isPlayerStage1 = false; // 플레이어의 스테이지1 상태를 클리어 못한 것으로 초기화
+
         SceneManager.LoadScene("Death"); // "Death" 씬으로 이동
     }
 
@@ -395,13 +398,13 @@ public class Player : MonoBehaviour
     }
 
     // 다른 스크립트에서 현재 플레이어 체력 얻어오기 위해 만든 함수
-    public static int GetPlayerHp()
+    public static float GetPlayerHp()
     {
         return playerHp;
     }
 
     // 다른 스크립트에서 현재 플레이어 체력 설정하기 위해 만든 함수
-    public static void SetPlayerHp(int hp)
+    public static void SetPlayerHp(float hp)
     {
         playerHp = hp;
         Debug.Log("체력 :  " + hp);

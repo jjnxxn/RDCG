@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class StoreManager : MonoBehaviour
 {
     private int playerMoney; // 현재 플레이어가 소유하고 있는 돈
-    private int playerHp; // 플레이어가 가지고 있는 현재 HP
+    private float playerHp; // 플레이어가 가지고 있는 현재 HP
     private const int maxPlayerHp = 100; // 플레이어가 가지고 있는 최대 HP
     public Text playerMoneyText; // 플레이어가 현재 가지고 있는 돈을 나타내는 Text
     public Text playerHpText; // 플레이어가 현재 가지고 있는 체력을 나타내는 Text
