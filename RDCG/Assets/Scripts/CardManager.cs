@@ -14,6 +14,7 @@ public class CardManager : MonoBehaviour
     void Awake() => Inst = this;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     //ë§ˆìš°ìŠ¤ë¥¼ ì˜¬ë ¸ì„ ë•Œ ì¹´ë“œ ì •ë³´
     public CardInfo selectCard;
     //ë§ˆìš°ìŠ¤ ìœ„ì¹˜ ì •ë³´
@@ -88,37 +89,39 @@ public class CardManager : MonoBehaviour
     
 
 =======
-    //Ä«µå¸¦ »ý¼ºÇÏ±â À§ÇÑ ÇÁ¸®ÆÕ
+=======
+>>>>>>> 23e66567c4bb5c5ec3c7ba1e9cb57fd66ef84709
+    //Ä«ï¿½å¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     public GameObject cardPrefab;
-    //Ä«µå¸¦ »ý¼ºÇÒ ½ºÆù Æ÷ÀÎÆ®
+    //Ä«ï¿½å¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®
    // public Transform cardspawnPoint;
-    //µÎ Æ®·£½ºÆûÀº ¾ÆÁ÷ ÇÏ´ÂÁßÀÌ¶ó Áö±ÝÀº ¹«½Ã
+    //ï¿½ï¿½ Æ®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ï´ï¿½ï¿½ï¿½ï¿½Ì¶ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     //public Transform myCardLeft;
    // public Transform myCardRight;
-    //»ý¼ºµÈ Ä«µå¸¦ µ¦¿¡ ³ÖÀ» ¸®½ºÆ®
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½å¸¦ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®
     public List<Card1> myCards;
-    //playerÀÇ mp°ªÀ» °¡Á®¿À±â À§ÇÑ º¯¼ö
+    //playerï¿½ï¿½ mpï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     public GameObject player;
-    //Ä«µå¸¦ »ý¼ºÇÒ ÇÁ¸®ÆÕ
+    //Ä«ï¿½å¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     GameObject cardObject;
-    //³»°¡ ¼±ÅÃÇÑ Ä«µå Á¤º¸ º¯¼ö
+    //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     public Card1 selectCard;
-    //Ä«µå¸¦ ¸¶¿ì·Î Å¬¸¯ÇßÀ» ‹š 
+    //Ä«ï¿½å¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ 
     bool isCardDrag;
-    //Ä«µå ¿µ¿ª
+    //Ä«ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     bool onCardArea;
-    //¸¶¿ì½ºÀÇ À§Ä¡
+    //ï¿½ï¿½ï¿½ì½ºï¿½ï¿½ ï¿½ï¿½Ä¡
     public Vector3 MousePos;
 
     
-    //ÇÃ·¹ÀÌ¾îÀÇ ¸¶³ª
+    //ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     //float myMP;
 
 
 
 
     /* void Start()
-     { //¾×¼Ç ÀÌº¥Æ®·Î onaddcard¿¡ addcardÇÔ¼ö¸¦ µî·Ï
+     { //ï¿½×¼ï¿½ ï¿½Ìºï¿½Æ®ï¿½ï¿½ onaddcardï¿½ï¿½ addcardï¿½Ô¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
          TurnManager1.OnAddCard += AddCard;
 
      OriginPos = new Vector3(card.gameObject.transform.position.x, card.gameObject.transform.position.y,
@@ -127,19 +130,19 @@ public class CardManager : MonoBehaviour
      }*/
 
     /*void OnDestroy()
-    {//¹Ý´ë·Î »èÁ¦ÇÒ ‹š »ç¿ë ÀÏ´ÜÀº »ç¿ë ¾ÈÇÔ
+    {//ï¿½Ý´ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ï´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         TurnManager1.OnAddCard -= AddCard;
     }*/
 
     void Update()
-    {//ÇÃ·¹ÀÌ¾î ¸¶³ª
+    {//ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½
        // myMP = player.GetComponent<Player1>().playerMP;
-        //¸¶¿ì½º À§Ä¡
+        //ï¿½ï¿½ï¿½ì½º ï¿½ï¿½Ä¡
         MousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         MousePos.z = -10;
-        //Ä«µå¿µ¿ª¿¡ ÀÖ´ÂÁö È®ÀÎ
+        //Ä«ï¿½å¿µï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½ È®ï¿½ï¿½
        // DetectCardArea();
-        //Ä«µå¸¦ ¸¶¿ì½º·Î Å¬¸¯ ÇßÀ» ¶§ Ä«µå ÀÌµ¿
+        //Ä«ï¿½å¸¦ ï¿½ï¿½ï¿½ì½ºï¿½ï¿½ Å¬ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Ä«ï¿½ï¿½ ï¿½Ìµï¿½
       /*  if (isCardDrag)
         {
             cardDrag();
@@ -147,63 +150,63 @@ public class CardManager : MonoBehaviour
         
     }
 
-    //Ä«µå ¿µ¿ª¿¡ ¾øÀ» ¶§ Ä«µå ÀÌµ¿
+    //Ä«ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Ä«ï¿½ï¿½ ï¿½Ìµï¿½
     /*private void cardDrag()
-    {//Ä«µå¿µ¿ª¿¡ ¾øÀ¸¸é ¼±ÅÃ Ä«µå¸¦ ¸¶¿ì½º À§Ä¡·Î ÀÌµ¿
+    {//Ä«ï¿½å¿µï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½å¸¦ ï¿½ï¿½ï¿½ì½º ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½Ìµï¿½
         if (!onCardArea)
         {
             selectCard.MoveTransform(new PRS(MousePos, Quaternion.identity, selectCard.originPRS.Scale), false);
 
         }
     }*/
-    //·¹ÀÌÄÉ½ºÆ®¸¦ ½÷¼­ Ä«µå¿µ¿ªÀÎÁö ¾Æ´ÑÁö È®ÀÎ
+    //ï¿½ï¿½ï¿½ï¿½ï¿½É½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½å¿µï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´ï¿½ï¿½ï¿½ È®ï¿½ï¿½
     /*void DetectCardArea()
-    {//·¹ÀÌÄÉ½ºÆ®¸¦ ¹ß»ç
+    {//ï¿½ï¿½ï¿½ï¿½ï¿½É½ï¿½Æ®ï¿½ï¿½ ï¿½ß»ï¿½
         RaycastHit2D[] hits = Physics2D.RaycastAll(MousePos, Vector3.forward);
         int layer = LayerMask.NameToLayer("cardArea");
-        //·¹ÀÌ¸¦ ½÷¼­ ¸ÂÀº ¿ÀºêÁ§Æ®µé Áß Ä«µå¿¡¸®¾îÀÌ¸é Æ®·ç ¾Æ´Ï¸é Æú½º
+        //ï¿½ï¿½ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ Ä«ï¿½å¿¡ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ Æ®ï¿½ï¿½ ï¿½Æ´Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½
         onCardArea = Array.Exists(hits, x => x.collider.gameObject.layer == layer);
 
     }*/
 
-    //Ä«µå»ý¼º ÇÔ¼ö
+    //Ä«ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½
   /*  void AddCard()
-    {//Ä«µå¸¦ ½ºÆù À§Ä¡¿¡ »ý¼º
+    {//Ä«ï¿½å¸¦ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         cardObject = Instantiate(cardPrefab, cardspawnPoint.position, Quaternion.identity);
-        //Card ½ºÅ©¸³Æ®¸¦ °¡Á®¿È
+        //Card ï¿½ï¿½Å©ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         
         var card = cardObject.GetComponent<Card1>();
-        //¸®½ºÆ®¿¡ Ä«µå Á¤º¸ ³Ö±â
+        //ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ Ä«ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö±ï¿½
         myCards.Add(card);
 
 
 
         cardAlignment();
-    }//Ä«µå¸¦ ÇØ´ç À§Ä¡·Î ÀÌµ¿*/
+    }//Ä«ï¿½å¸¦ ï¿½Ø´ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½Ìµï¿½*/
 
-    //Ä«µå¸¦ ³ÂÀ» ¶§ ÇÔ¼ö
+    //Ä«ï¿½å¸¦ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ô¼ï¿½
    /* void AttackCard()
-    {//¸¶¿ì½º Å¬¸¯À» ¶§°í Ä«µå¿µ¿ª ¹ÛÀÏ ¶§ ¼±ÅÃ Ä«µå¸¦ »èÁ¦ÇÏ°í ¸¶³ª¸¦ ÁÙÀÌ°í ´Ù½Ã Ä«µå Á¤·Ä
+    {//ï¿½ï¿½ï¿½ì½º Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½å¿µï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½å¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì°ï¿½ ï¿½Ù½ï¿½ Ä«ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (!isCardDrag && !onCardArea)
         {
-            //Ä«µå ¸®½ºÆ®¿¡¼­ ¼±ÅÃ Ä«µå Á¦°Å
+            //Ä«ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             myCards.Remove(selectCard);
-            //µÎÆ®À© Á¾·á
+            //ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             selectCard.transform.DOKill();
-            //¼±ÅÃ Ä«µå ÀÌ¸§ µð¹ö±×
+            //ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½ï¿½ ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
             Debug.Log(selectCard.gameObject.GetComponent<CardInfo>().cardName);
-            //³» ¸¶³ª ÇØ´ç ÄÚ½ºÆ® ¸¸Å­ »©ÁÜ
+            //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ø´ï¿½ ï¿½Ú½ï¿½Æ® ï¿½ï¿½Å­ ï¿½ï¿½ï¿½ï¿½
             myMP -= selectCard.gameObject.GetComponent<CardInfo>().cardCost;
-            //ÇÃ·¹ÀÌ¾î·Î Á¤º¸ Àü´Þ
+            //ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             player.GetComponent<Player1>().playerMP = myMP;
-            //Á¤º¸ ¾÷µ¥ÀÌÆ®
+            //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
             player.GetComponent<Player1>().UpdateState();
 
-            //°ð¹Ù·Î »èÁ¦ÇÏ±â À§ÇØ
+            //ï¿½ï¿½Ù·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½
             DestroyImmediate(selectCard.gameObject);
-            //»èÁ¦ÇÏ¸é ¹Ì¾ÅÀ¸·Î ³²¾Æ¼­ ¿À·ù°¡ ³ª±â ¶«¿¡
+            //ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½Ì¾ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Æ¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             selectCard = null;
-            //Ä«µå Á¤·Ä
+            //Ä«ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             cardAlignment();
 
         }
@@ -211,37 +214,37 @@ public class CardManager : MonoBehaviour
     }*/
 
   /*  void cardAlignment()
-    {//Ä«µåµéÀÇ À§Ä¡Á¤º¸
+    {//Ä«ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½
         List<PRS> originCardPRSs = new List<PRS>();
 
         originCardPRSs = RoundAlignment(myCardLeft, myCardRight, myCards.Count, -0.5f, new Vector3(5f, 10f, 5f));
 
 
-        //Ä«µå ¸®½ºÆ® ¼ö ¸¸Å­ ¹Ýº¹
+        //Ä«ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ ï¿½ï¿½Å­ ï¿½Ýºï¿½
         for (int i = 0; i < myCards.Count; i++)
-        {//ÇØ´ç Ä«µå¸¦ ÁöÁ¤ À§Ä¡·Î ÀÌµ¿
+        {//ï¿½Ø´ï¿½ Ä«ï¿½å¸¦ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½Ìµï¿½
             var card = myCards[i];
 
             card.originPRS = originCardPRSs[i];
             card.MoveTransform(card.originPRS, true, 0.7f);
         }
     }*/
-    //Ä«µåÀÇ À§Ä¡ º¯°æÇÏ´Â ÇÔ¼ö
+    //Ä«ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Ô¼ï¿½
    /* List<PRS> RoundAlignment(Transform left, Transform right, int count, float height, Vector3 scale)
-    {//Ä«µå°¡ ¸î°³ÀÎÁö¸¦ À§ÇÑ º¯¼ö
+    {//Ä«ï¿½å°¡ ï¿½î°³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         float[] objectLerps = new float[count];
-        //Ä«µå °¹¼ö ¸¸Å­ ¸®½ºÆ® °ø°£ È®º¸
+        //Ä«ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å­ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
         List<PRS> results = new List<PRS>(count);
-        //Ä«µå°¡ 3°³ ±îÁö´Â ÁöÁ¤ÇÑ À§Ä¡·Î ÀÌµ¿ 4°³ ÀÌ»óÀ¸·Î´Â °¹¼ö¿¡ µû¶ó °£°Ý º¯°æ
+        //Ä«ï¿½å°¡ 3ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½Ìµï¿½ 4ï¿½ï¿½ ï¿½Ì»ï¿½ï¿½ï¿½ï¿½Î´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         switch (count)
         {
             case 1: objectLerps = new float[] { 0.5f }; break;
             case 2: objectLerps = new float[] { 0.27f, 0.73f }; break;
             case 3: objectLerps = new float[] { 0.1f, 0.5f, 0.9f }; break;
             default:
-                //Ä«µå À§Ä¡¸¦ À§ÇØ À§Ä¡ ³ª´©±â
+                //Ä«ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 float interval = 1f / (count - 1);
-                //Ä«µå À§Ä¡¸¦ ¹è¿­¿¡ ÀúÀå
+                //Ä«ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                 for (int i = 0; i < count; i++)
                 {
                     objectLerps[i] = interval * i;
@@ -253,21 +256,21 @@ public class CardManager : MonoBehaviour
         }
         
         for (int i = 0; i < count; i++)
-        {//Á¤ÇÑ À§Ä¡·Î À§Ä¡ ÀúÀå
+        {//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½
             var myPos = Vector3.Lerp(left.position, right.position, objectLerps[i]);
             var myRot = Quaternion.identity;
 
-            //ÇØ´ç À§Ä¡·Î ÀÌµ¿
+            //ï¿½Ø´ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½Ìµï¿½
             results.Add(new PRS(myPos, myRot, scale));
         }
 
         return results;
     }*/
-    //Ä«µå¸¦ °ø°ÝÇÏÁö ¾Ê°í ¸¶¿ì½º¸¦ ¶ª ¶§ ´Ù½Ã ¿ø·¡ À§Ä¡·Î ÀÌµ¿
+    //Ä«ï¿½å¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê°ï¿½ ï¿½ï¿½ï¿½ì½ºï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½Ù½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½Ìµï¿½
     void EnlargeCard(bool isEnlarge,  Card1 card)
     {
         
-        //¸¶¿ì½º¸¦ Ä«µå À§¿¡ µÑ¶§ Ä«µåÀÇ Å©±â¸¦ Å©°Ô ¸¸µë
+        //ï¿½ï¿½ï¿½ì½ºï¿½ï¿½ Ä«ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¶ï¿½ Ä«ï¿½ï¿½ï¿½ï¿½ Å©ï¿½â¸¦ Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (isEnlarge)
         {
             
@@ -278,13 +281,13 @@ public class CardManager : MonoBehaviour
 
         }
         else
-        {//¾Æ´Ï¸é ¿ø·¡ Å©±â·Î º¯ÇÔ
+        {//ï¿½Æ´Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½ Å©ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             
             card.MoveTransform(card.originPRS, false);
         }
 
     }
-    //Ä«µå À§·Î ¸¶¿ì½º¸¦ µÑ¶§
+    //Ä«ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ì½ºï¿½ï¿½ ï¿½Ñ¶ï¿½
     public void CardMouseOver(Card1 card)
     {
         
@@ -297,24 +300,24 @@ public class CardManager : MonoBehaviour
 
 
 
-    //Ä«µå¿¡¼­ ¸¶¿ì½º¸¦ –E ¶§
+    //Ä«ï¿½å¿¡ï¿½ï¿½ ï¿½ï¿½ï¿½ì½ºï¿½ï¿½ ï¿½E ï¿½ï¿½
     public void CardMouseExit(Card1 card)
     {
         Debug.Log("Exit");
-        //Ä«µå Å©±â¸¦ ¿ø·¡´ë·Î
+        //Ä«ï¿½ï¿½ Å©ï¿½â¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         EnlargeCard(false, selectCard);
     }
-    //¸¶¿ì½º¸¦ ´©¸¦ ¶§
+    //ï¿½ï¿½ï¿½ì½ºï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
     public void CardMouseDown()
-    {//µå·¡±× ÇÒ¼ö ÀÖ°Ô ÇÏ´Â ºÒ ÇÔ¼ö Æ®·ç·Î
+    {//ï¿½å·¡ï¿½ï¿½ ï¿½Ò¼ï¿½ ï¿½Ö°ï¿½ ï¿½Ï´ï¿½ ï¿½ï¿½ ï¿½Ô¼ï¿½ Æ®ï¿½ï¿½ï¿½
         isCardDrag = true;
         
     }
-    //¾Æ´Ò ¶§
+    //ï¿½Æ´ï¿½ ï¿½ï¿½
    /* public void CardMouseUP()
-    {//µå·¡±× ÇÒ¼ö ÀÖ°Ô ÇÏ´Â ºÒ ÇÔ¼ö Æú½º·Î
+    {//ï¿½å·¡ï¿½ï¿½ ï¿½Ò¼ï¿½ ï¿½Ö°ï¿½ ï¿½Ï´ï¿½ ï¿½ï¿½ ï¿½Ô¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
        // isCardDrag= false;
-        //ÇöÀç ¸¶³ª°¡ Ä«µå ÄÚ½ºÆ® º¸´Ù ¸¹À» ¶§¸¸ Ä«µå°¡ »ç¶óÁü
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½ï¿½ ï¿½Ú½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½å°¡ ï¿½ï¿½ï¿½ï¿½ï¿½
         if (myMP >= selectCard.gameObject.GetComponent<CardInfo>().cardCost) 
         { 
             AttackCard();
@@ -325,6 +328,9 @@ public class CardManager : MonoBehaviour
 
     }*/
 
+<<<<<<< HEAD
+>>>>>>> 23e66567c4bb5c5ec3c7ba1e9cb57fd66ef84709
+=======
 >>>>>>> 23e66567c4bb5c5ec3c7ba1e9cb57fd66ef84709
 }
 
